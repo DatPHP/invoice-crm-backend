@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\OverallController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,6 @@ Route::post('/login', [AuthController::class, 'login']);
 // Defines a POST route for user logout, using Laravel Sanctum middleware for authentication, 
 // handled by the 'logout' method in the AuthController.
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']); 
+
+// Get counts of categories and products
+Route::get('/counts', [OverallController::class, 'getCounts']); 
