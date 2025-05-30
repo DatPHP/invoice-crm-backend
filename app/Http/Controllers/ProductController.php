@@ -82,8 +82,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        // Retrieve the product from the database using the provided $id
-        $product = Product::find($id);
+        // Retrieve the product from the database using the provided $id with its category
+        $product = Product::with('category')->find($id);
 
         // Check if the product was found
         if ($product) {
