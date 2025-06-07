@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OverallController;
+use App\Http\Controllers\Api\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Defines all CRUD routes for the 'products' resource using Laravel's API resource routing.
 Route::apiResource('products', ProductController::class); 
 Route::apiResource('categories', CategoryController::class); 
+Route::apiResource('companies', CompanyController::class);
 
 Route::get('/get_all_invoice', [InvoiceController::class, 'get_all_invoice']);
 
